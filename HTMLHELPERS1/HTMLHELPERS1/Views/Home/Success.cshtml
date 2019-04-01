@@ -1,0 +1,85 @@
+﻿@model HTMLHELPERS1.Models.ViewModels.PeopleViewModels
+@{
+    ViewBag.Title = "Success";
+}
+
+
+<br />
+
+<h1>Formulario </h1>
+<br />
+
+
+<form action="~/Home/save/" method="post">
+    <div class="row">
+
+        <h4>@Html.LabelFor(d => d.Cedula)</h4>
+        @Html.TextBoxFor(d => d.Cedula, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(d => d.Cedula, "", new { @class = "text-danger" })<br />
+
+        <h4>@Html.LabelFor(d => d.Nombre)</h4>
+        @Html.TextBoxFor(d => d.Nombre, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(d => d.Nombre, "", new { @class = "text-danger" })     <br />
+
+        <h4>@Html.LabelFor(d => d.Apellido)</h4>
+        @Html.TextBoxFor(d => d.Apellido, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(d => d.Apellido, "", new { @class = "text-danger" })     <br />
+
+        <h4>@Html.LabelFor(d => d.Edad)</h4>
+        @Html.TextBoxFor(d => d.Edad, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(d => d.Edad, "", new { @class = "text-danger" })     <br />
+
+        <h4>@Html.LabelFor(d => d.Telefono)</h4>
+        @Html.TextBoxFor(d => d.Telefono, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(d => d.Telefono, "", new { @class = "text-danger" })     <br />
+
+        <h4>@Html.LabelFor(d => d.Email)</h4>
+        @Html.TextBoxFor(d => d.Email, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(d => d.Email, "", new { @class = "text-danger" })     <br />
+
+
+        <h4>@Html.LabelFor(d => d.Genero)</h4>
+        @Html.DropDownList("Genero", new List<SelectListItem>() {
+
+
+        new SelectListItem { Text = "Femenino", Value = "Femenino" },
+        new SelectListItem { Text = "Masculino", Value = "Masculino" },
+        new SelectListItem { Text = "Otro", Value = "Otro" }
+})
+        <br />
+
+        <br />
+
+        <h4>@Html.Label("Estado Civil")</h4>
+
+        Soltero: @Html.RadioButton("Genero", "Soltero")
+        <br />
+        Casado: @Html.RadioButton("Genero", "Casado")
+        <br />
+        Viudo/a: @Html.RadioButton("Genero", "Viudo")
+        <br />
+
+
+
+        <h4>@Html.Label("Hobby")</h4>
+
+        Bailar: @Html.CheckBox("Bailar", true)
+        <br />
+        Pescar: @Html.CheckBox("Pescar", true)
+        <br />
+        Viedo Juegos: @Html.CheckBox("Viedo Juegos", true)
+        <br />
+        Leer: @Html.CheckBox("Leer", true)
+
+
+        <br />        <br />
+
+        <input type="submit" />
+    </div>
+
+</form>
+
+
+<div>
+</div>
+
